@@ -1,56 +1,13 @@
-{% load static %}
-<html>
-    <head>
-        <title>Muhammet yıldırm django blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Blogum</a></h1>
-            <br>
-        </div>
+{% extends 'blog/base.html' %}
 
-        <h1><a href="">Django gönderilerim</a></h1>
-
-        {% for post in posts %}
-            <div>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>published: {{ post.published_date }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <br>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
             </div>
-        {% endfor %}
-
-
-        <div>
-            <br>
-            <br>
-            <h1><a href="">My first blog</a></h1>
-            <p>published: 10.06.2023</p>
-            <p>Hi im muhammet yıldırım</p>
-            <br>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <h1><a href="">İkinci gönderim</a></h1>
-            <p>yayınlanma tarihi: 10.06.2023</p>
-            <p><em>Selam ben muhammet yıldırım</em></p>
-            <br>
-        </div>
-
-        <div>
-            <h1><a href="">Üçüncü gönderim</a></h1>
-            <p>yayınlanma tarihi: 10.06.2023</p>
-            <p><strong>Selam ben muhammet yıldırım</strong></p>
-            <br>
-        </div>
-
-        <div>
-            <h1><a href="">Blog Kuralları</a></h1>
-            <ul><li>1 = Birinci madde</li><li>2 = İkinci madde</li><li>3 = Üçüncü madde</li><li>4 = Dördüncü madde</li></ul>
-        </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
