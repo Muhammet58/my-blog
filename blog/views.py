@@ -48,9 +48,10 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 
-def deletePost(self, request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    if post:
-        post.delete()
-
-    return redirect(reverse('blog/post_detail.html'))
+#def deletePost(self, request, pk):
+#    post = get_object_or_404(Post, pk=pk)
+#    if post:
+#        post.delete()
+#
+#    return redirect(reverse('blog/post_detail.html'))
+#
