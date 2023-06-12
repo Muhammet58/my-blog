@@ -8,15 +8,30 @@ html
             <h1><a href="/">Django Blogum</a></h1>
             <br>
         </div>
+
+        <h2><a href="">Django gönderilerim</a></h2>
+
+        {% for post in posts %}
+            <div>
+                <h3><a href="">{{ post.title }}</a></h3>
+                <p>published: {{ post.published_date }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <br>
+            </div>
+        {% endfor %}
+
+
         <div>
-            <h2><a href="">My first blog</a></h2>
+            <br>
+            <br>
+            <h3><a href="">My first blog</a></h3>
             <p>published: 10.06.2023</p>
             <p>Hi im muhammet yıldırım</p>
             <br>
         </div>
 
         <div>
-            <h2><a href="">İkinci gönderim</a></h2>
+            <h3><a href="">İkinci gönderim</a></h3>
             <p>yayınlanma tarihi: 10.06.2023</p>
             <p><em>Selam ben muhammet yıldırım</em></p>
             <br>
