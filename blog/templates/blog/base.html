@@ -1,5 +1,5 @@
 {% load static %}
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <head>
         <title>Muhammet yıldırm django blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -8,13 +8,13 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">
-                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <div class="page-header page">
+            <h1><img src="static/img/Django_logo.png" class="page_img" width="150"></h1>
             <h1><a href="/">Muhammet Yıldırım django Blog</a></h1>
         </div>
         <div class="content container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     {% block content %}
                     {% endblock %}
                 </div>

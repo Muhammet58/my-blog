@@ -8,7 +8,6 @@ class PostForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(),
-            'text': forms.Textarea(attrs={'class': 'form-control', 'maxlength': 100}),
+            'text': forms.Textarea(attrs={'class': 'form-control', 'maxlength': 100 }),
             'author': forms.Select(attrs={'class': 'selectpicker form-control', 'data-width': '200px'})
         }
-
