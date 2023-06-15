@@ -23,7 +23,7 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
+            post = form.save(commit=True)
             post.author = request.user
             post.published_date = timezone.now()
             post.save()

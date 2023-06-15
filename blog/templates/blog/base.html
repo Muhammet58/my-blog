@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header page">
-            <h1><img src="static/img/Django_logo.png" class="page_img" width="150"></h1>
+        <div class="page-header">
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <h1><a href="/">Muhammet Yıldırım django Blog</a></h1>
         </div>
         <div class="content container">
